@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Users</title>
+</head>
+<body>
+    <h1>All Users</h1>
+    {% if users %}
+        <ul>
+        {% for user in users %}
+            <li>Name: {{ user.name }}, Credentials: {{ user.credentials }}, Gender: {{ user.gender }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No users found.</p>
+    {% endif %}
+    <br>
+    <a href="/">Add Another User</a>
+</body>
+</html>
