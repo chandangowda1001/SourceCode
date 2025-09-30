@@ -1,0 +1,16 @@
+# Relyance Compliance Inspector Configuration
+
+repository: SourceCode
+
+services:
+  - service: flask-website
+    tag:
+      - web-app
+      - backend
+    source:
+      - .  # This represents the root directory where app.py is located
+      - templates  # The folder containing your HTML files
+
+exclude:
+  # You can add directories to exclude here if needed
+  # - build/
