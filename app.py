@@ -17,7 +17,7 @@ class User(db.Model):
     gender = db.Column(db.String(20), nullable=False)
 
     def __repr__(self):
-        return f"User('{self.name}', '{self.credentials}', '{self.gender}')"
+        return f"User('{self.name}', '{self.credentials}', '{self.gender}', '{self.marriage}', '{self.race}', '{self.genetic}')"
 
 # Route for the home page (the form to add a user)
 @app.route('/', methods=['GET', 'POST'])
@@ -27,9 +27,12 @@ def add_user():
         name = request.form['name']
         credentials = request.form['credentials']
         gender = request.form['gender']
+        genetic = request.form['genetic']
+        marriage = request.form['marriage']
+        race = request.form['race']
 
         # Create a new user instance
-        new_user = User(name=name, credentials=credentials, gender=gender)
+        new_user = User(name=name, credentials=credentials, gender=gender, race=race, genetic=genetic,marriage = marriage)
 
         # Add the new user to the database and commit
         db.session.add(new_user)
