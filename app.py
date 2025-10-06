@@ -28,11 +28,11 @@ def add_user():
         credentials = request.form['credentials']
         gender = request.form['gender']
         genetic = request.form['genetic']
-        marriage = request.form['marriage']
+        marriage = request.form['spouse']
         race = request.form['race']
 
         # Create a new user instance
-        new_user = User(name=name, credentials=credentials, gender=gender, race=race, genetic=genetic,marriage = marriage)
+        new_user = User(name=name, credentials=credentials, gender=gender, race=race, genetic=genetic,spouse=spouse)
 
         # Add the new user to the database and commit
         db.session.add(new_user)
