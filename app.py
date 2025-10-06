@@ -17,7 +17,7 @@ class User(db.Model):
     gender = db.Column(db.String(20), nullable=False)
 
     def __repr__(self):
-        return f"User('{self.name}', '{self.credentials}', '{self.gender}', '{self.marriage}', '{self.race}', '{self.genetic}')"
+        return f"User('{self.name}', '{self.credentials}', '{self.gender}', '{self.spouse}', '{self.race}', '{self.genetic}')"
 
 # Route for the home page (the form to add a user)
 @app.route('/', methods=['GET', 'POST'])
